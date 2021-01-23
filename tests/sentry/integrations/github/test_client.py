@@ -113,7 +113,9 @@ class GitHubAppsClientTest(TestCase):
         )
 
         responses.add(
-            method=responses.HEAD, url=url, json={"text": 200},
+            method=responses.HEAD,
+            url=url,
+            json={"text": 200},
         )
 
         source_url = self.install.get_stacktrace_link(self.repo, path, "master", version)

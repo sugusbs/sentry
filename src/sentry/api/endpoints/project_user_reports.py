@@ -63,7 +63,7 @@ class ProjectUserReportsEndpoint(ProjectEndpoint, EnvironmentMixin):
                 ),
             ),
             paginator_cls=DateTimePaginator,
-            **paginate_kwargs
+            **paginate_kwargs,
         )
 
     def post(self, request, project):

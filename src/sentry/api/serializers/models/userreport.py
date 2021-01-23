@@ -61,7 +61,9 @@ class UserReportWithGroupSerializer(UserReportSerializer):
             serialized_groups = {
                 d["id"]: d
                 for d in serialize(
-                    groups, user, GroupSerializer(environment_func=self.environment_func),
+                    groups,
+                    user,
+                    GroupSerializer(environment_func=self.environment_func),
                 )
             }
 

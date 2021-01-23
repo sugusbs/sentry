@@ -54,5 +54,5 @@ class OrganizationUserReportsEndpoint(OrganizationEndpoint):
             order_by="-date_added",
             on_results=lambda x: serialize(x, request.user, UserReportWithGroupSerializer()),
             paginator_cls=DateTimePaginator,
-            **paginate_kwargs
+            **paginate_kwargs,
         )

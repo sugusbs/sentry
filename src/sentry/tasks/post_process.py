@@ -417,5 +417,5 @@ def plugin_post_process_group(plugin_slug, event, **kwargs):
         group=event.group,
         expected_errors=(PluginError,),
         _with_transaction=False,
-        **kwargs
+        **kwargs,
     )

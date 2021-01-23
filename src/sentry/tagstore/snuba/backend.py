@@ -554,7 +554,7 @@ class SnubaTagStorage(TagStorage):
         # this method is already dealing with version strings rather than
         # release ids which would need to be translated by the snuba util.
         tag = "sentry:release"
-        col = u"tags[{}]".format(tag)
+        col = "tags[{}]".format(tag)
         conditions = [[col, "IN", versions], DEFAULT_TYPE_CONDITION]
         aggregations = [
             ["count()", "", "times_seen"],

@@ -188,7 +188,7 @@ class AwsLambdaIntegrationProvider(IntegrationProvider):
 
         integration_name = "{} {}".format(account["Name"], region)
 
-        external_id = u"{}-{}".format(account_number, region)
+        external_id = "{}-{}".format(account_number, region)
 
         integration = {
             "name": integration_name,
