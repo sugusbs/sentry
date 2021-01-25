@@ -463,6 +463,9 @@ class EventsChart extends React.Component<Props> {
       );
     };
 
+
+
+    // asd
     if (!disableReleases) {
       const previousChart = chartImplementation;
       chartImplementation = chartProps => (
