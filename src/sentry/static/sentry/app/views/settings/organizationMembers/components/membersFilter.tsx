@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
 import Checkbox from 'app/components/checkbox';
-import Switch from 'app/components/switch';
+import Switch from 'app/components/switchButton';
 import {t} from 'app/locale';
 import space from 'app/styles/space';
 import {MemberRole} from 'app/types';
