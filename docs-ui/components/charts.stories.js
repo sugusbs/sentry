@@ -1,15 +1,14 @@
 import React from 'react';
-import {withInfo} from '@storybook/addon-info';
-import {number, boolean, text} from '@storybook/addon-knobs';
+import {boolean, number, text} from '@storybook/addon-knobs';
 
-import LineChart from 'app/components/charts/lineChart';
 import BarChart from 'app/components/charts/barChart';
+import LineChart from 'app/components/charts/lineChart';
 
 export default {
   title: 'DataVisualization/Charts/Playground',
 };
 
-export const _LineChart = withInfo('Description')(() => (
+export const _LineChart = () => (
   <div style={{backgroundColor: 'white', padding: 12}}>
     <LineChart
       series={[
@@ -66,11 +65,9 @@ export const _LineChart = withInfo('Description')(() => (
       }}
     />
   </div>
-));
+);
 
-export const _BarChart = withInfo(
-  'Description: Note Scroll Legends does not work in storybook'
-)(() => (
+export const _BarChart = () => (
   <div style={{backgroundColor: 'white', padding: 12}}>
     <BarChart
       stacked={boolean('stacked', true)}
@@ -139,4 +136,11 @@ export const _BarChart = withInfo(
       }}
     />
   </div>
-));
+);
+_BarChart.parameters = {
+  docs: {
+    description: {
+      story: 'Description: Note Scroll Legends does not work in storybook',
+    },
+  },
+};
