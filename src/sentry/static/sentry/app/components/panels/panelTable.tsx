@@ -41,12 +41,14 @@ type Props = {
    */
   disablePadding?: boolean;
 
-  className?: string;
-
   /**
    * A custom loading indicator.
    */
   loader?: React.ReactNode;
+
+  forwardRef?: React.Ref<HTMLDivElement>;
+
+  className?: string;
 };
 
 /**
@@ -69,9 +71,10 @@ const PanelTable = ({
   isLoading,
   isEmpty,
   disablePadding,
-  className,
   emptyMessage = t('There are no items to display'),
   loader,
+  forwardRef,
+  className,
 }: Props) => {
   const shouldShowLoading = isLoading === true;
   const shouldShowEmptyMessage = !shouldShowLoading && isEmpty;
@@ -83,6 +86,7 @@ const PanelTable = ({
       disablePadding={disablePadding}
       className={className}
       hasRows={shouldShowContent}
+      forwardRef={forwardRef}
     >
       {headers.map((header, i) => (
         <PanelTableHeader key={i}>{header}</PanelTableHeader>
@@ -125,7 +129,7 @@ const LoadingWrapper = styled('div')``;
 const TableEmptyStateWarning = styled(EmptyStateWarning)``;
 
 const Wrapper = styled(Panel, {
-  shouldForwardProp: p => isPropValid(p) && p !== 'columns',
+  shouldForwardProp: p => (isPropValid(p) && p !== 'columns') || p === 'forwardRef',
 })<WrapperProps>`
   display: grid;
   grid-template-columns: repeat(${p => p.columns}, auto);
